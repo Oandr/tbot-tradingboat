@@ -48,6 +48,8 @@ def get_ticker(contract: Contract) -> str:
         ticker = contract.symbol
     elif contract.secType == "CASH":
         ticker = contract.localSymbol.replace(".", "")
+    elif contract.secType == "IOPT":
+        ticker = contract.localSymbol.replace(".", "")
     return ticker
 
 
