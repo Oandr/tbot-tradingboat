@@ -43,7 +43,8 @@ def mark(func):
 
 def get_ticker(contract: Contract) -> str:
     """Returns a consistent symbol across contracts."""
-    ticker = "NOT_SUPPORT"
+    #ticker = "NOT_SUPPORT"
+    ticker = contract.localSymbol
     if contract.secType == "STK":
         ticker = contract.symbol
     elif contract.secType == "CASH":
