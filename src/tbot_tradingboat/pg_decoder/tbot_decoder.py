@@ -431,7 +431,7 @@ class TBOTDecoder(TbotObserver):
             timestamp,
         ) = self.extract_order_parameters(data_dict)
         orderRefEx = get_ordref_ex(timeframe, orderRef)
-        tvSecType = ("stock", "forex", "crypto", "index_option")
+        tvSecType = ("stock", "forex", "crypto", "iption")
         _contract = data_dict.get("contract", "").strip().lower()
         if _contract in tvSecType:
             contract = _contract
@@ -621,7 +621,7 @@ class TBOTDecoder(TbotObserver):
             else "CRYPTO"
             if t_ord.contract == "crypto"
             else "IOPT"
-            if t_ord.contract == "index_option"
+            if t_ord.contract == "iption"
             else None
         )
         # Find the available cash balance in the appropriate currency

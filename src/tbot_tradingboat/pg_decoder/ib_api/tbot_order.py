@@ -115,7 +115,7 @@ class TbotOrder(ABC):
             contract = Forex(pair=t_ord.symbol)
         elif t_ord.contract == "crypto":
             contract = Crypto(t_ord.symbol, "PAXOS", t_ord.currency)
-        elif t_ord.contract == "index_option":
+        elif t_ord.contract == "iption":
             contract = Contract()
             contract.localSymbol = t_ord.symbol
             contract.secType = "IOPT"
