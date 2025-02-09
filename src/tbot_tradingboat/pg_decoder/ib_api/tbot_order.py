@@ -119,7 +119,7 @@ class TbotOrder(ABC):
             contract = Contract()
             contract.localSymbol = t_ord.symbol
             contract.secType = "IOPT"
-            contract.exchange = "SWB"
+            contract.exchange = "GETTEX"
             contract.currency = t_ord.currency
         else:
             logger.error(f"contract: {t_ord.contract} not implemented")
