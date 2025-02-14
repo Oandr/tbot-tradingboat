@@ -355,7 +355,8 @@ class TBOTDecoder(TbotObserver):
         timeframe = data_dict.get("timeframe", "?")
         orderRef = data_dict.get("orderRef", "missing").strip()[:TBOT_ORDERREF_MAX_LEN]
         timestamp = data_dict.get("timestamp", "")
-        return symbol, currency, metrics, timeframe, orderRef, timestamp
+        exchange = data_dict.get("exchange", "FWB")
+        return symbol, currency, metrics, timeframe, orderRef, timestamp, exchange
 
     def extract_order_values(self, metrics) -> Tuple:
         """Extract order values"""
@@ -429,6 +430,7 @@ class TBOTDecoder(TbotObserver):
             timeframe,
             orderRef,
             timestamp,
+            exchange,
         ) = self.extract_order_parameters(data_dict)
         orderRefEx = get_ordref_ex(timeframe, orderRef)
         tvSecType = ("stock", "forex", "crypto", "index_option")
@@ -501,6 +503,7 @@ class TBOTDecoder(TbotObserver):
             exit_stop,
             tv_price,
             orderRefEx,
+            exchange,
             "GTC",
         )
         rv_state = self.submit_order(direction, t_ord)

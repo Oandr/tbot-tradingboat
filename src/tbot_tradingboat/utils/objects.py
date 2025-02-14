@@ -154,6 +154,7 @@ class OrderTV(NamedTuple):
     # TradingView's close price of the bar
     price: float
     orderRef: str
+    exchange: str
     tif: str
 
 
@@ -171,6 +172,7 @@ class OrderDBInfo(NamedTuple):
     avgfillprice: float
     orderStatus: str
     orderRef: str
+    exchange: str
     parentOrderId: int = 0
     lmtPrice: float = 0.0  # Limit Price
     auxPrice: float = 0.0  # stopPrice
@@ -190,6 +192,7 @@ class AlertDBInfo(NamedTuple):
     direction: str = ""
     timeframe: str = ""
     orderRef: str = ""
+    exchange: str = ""
     qty: float = 0.0
     entryLimit: float = 0.0
     entryStop: float = 0.0

@@ -36,6 +36,9 @@
                 "direction": {
                     "type": "string"
                 },
+                "exchange": {
+                    "type": "string"
+                },
                 "metrics": {
                     "type": "array",
                     "items": {

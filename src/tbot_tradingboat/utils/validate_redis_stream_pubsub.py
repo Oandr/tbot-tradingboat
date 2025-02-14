@@ -45,6 +45,7 @@ TV_WEBHOOK = {
     "clientId": 1,
     "contract": "stock",
     "orderRef": "LOT1001",
+    "exchange": "SMART",
     "direction": "strategy.entrylong",
     "metrics": [
         {"name": "entry.stop", "value": 0.0},
